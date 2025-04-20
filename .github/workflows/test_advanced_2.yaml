@@ -11,5 +11,5 @@ jobs:
           number2: [7, 6, 5, 4, 3, 2, 1]
     uses: osamaahmed17/GitHub_Actions_Basic_Advance/.github/workflows/advanced_2.yaml@main
     with:
-      number1: $
-      number2: $ 
+      number1: ${{ matrix.number1 }}
+      number2: ${{ matrix.number2 }}   
