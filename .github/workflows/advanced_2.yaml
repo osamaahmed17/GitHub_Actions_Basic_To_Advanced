@@ -1,33 +1,41 @@
-name: Advance-2 Workflow
+name: Advanced-2 Workflow
 
 on:
-  workflow_dispatch:
-    inputs:
-      number1:
-        description: 'First number'
-        required: true
-        type: number
-        default: 0
-      number2:
-        description: 'Second number'
-        required: true
-        type: number
-        default: 0
-
-jobs:
-  add-numbers:
-    name: Add two numbers
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Set up environment
-        run: |
-          echo "NUMBER1=${{ inputs.number1 }}" >> $GITHUB_ENV
-          echo "NUMBER2=${{ inputs.number2 }}" >> $GITHUB_ENV
-
-      - name: Calculate sum
-        id: calculate
-        run: |
-          sum=$(($NUMBER1 + $NUMBER2))
-          echo "SUM=$sum"
-          echo "sum=$sum" >> $GITHUB_OUTPUT
+    workflow_call:
+      inputs:
+        number1:
+          description: 'First number'
+          required: true
+          type: number
+          default: 0
+        number2:
+          description: 'Second number'
+          required: true
+          type: number
+          default: 0
+      outputs:
+        sum:
+          description: 'Sum of the two numbers'
+          value: $
+          
+  jobs:
+    add-numbers:
+      name: Add two numbers
+      runs-on: ubuntu-latest
+  
+      outputs:
+        sum: $
+      
+      steps:
+        - id: set-up-env
+          name: Set up environment
+          run: |
+            echo "NUMBER1=$" >> $GITHUB_ENV
+            echo "NUMBER2=$" >> $GITHUB_ENV
+            
+        - name: Calculate sum
+          id: calculate
+          run: |
+            sum=$((NUMBER1 + NUMBER2))
+            echo "%{sum}"
+            echo "SUM=${sum}" >> $GITHUB_OUTPUT

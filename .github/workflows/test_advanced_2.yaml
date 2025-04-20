@@ -1,4 +1,4 @@
-name: Test Advance-2 Workflow
+name: Test Advanced-2 Workflow
 
 on: 
   workflow_dispatch:
