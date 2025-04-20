@@ -1,0 +1,15 @@
+name: Test Advance-2 Workflow
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  test:
+    strategy:
+        matrix:
+          number1: [1, 2, 3, 4, 5, 6, 7]
+          number2: [7, 6, 5, 4, 3, 2, 1]
+    uses: osamaahmed17/GitHub_Actions_Basic_Advance/.github/workflows/advanced_2.yaml@main
+    with:
+      number1: $
+      number2: $ 
