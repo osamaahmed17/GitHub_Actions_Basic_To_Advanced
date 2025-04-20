@@ -13,10 +13,7 @@ on:
         required: true
         type: number
         default: 0
-    outputs:
-      sum:
-        description: 'Sum of the two numbers'
-        value: $
+
         
 
 jobs:
@@ -24,9 +21,6 @@ jobs:
     name: Add two numbers
     runs-on: ubuntu-latest
 
-    outputs:
-      sum: $
-    
     steps:
       - id: set-up-env
         name: Set up environment
