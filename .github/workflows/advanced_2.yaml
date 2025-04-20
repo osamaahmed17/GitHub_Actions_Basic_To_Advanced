@@ -1,4 +1,4 @@
-name: Add Numbers Workflow
+name: Advance-2 Workflow
 
 on:
   workflow_call:
