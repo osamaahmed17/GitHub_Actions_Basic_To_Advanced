@@ -14,23 +14,20 @@ on:
         type: number
         default: 0
 
-        
-
 jobs:
   add-numbers:
     name: Add two numbers
     runs-on: ubuntu-latest
 
     steps:
-      - id: set-up-env
-        name: Set up environment
+      - name: Set up environment
         run: |
-          echo "NUMBER1=$" >> $GITHUB_ENV
-          echo "NUMBER2=$" >> $GITHUB_ENV
-          
+          echo "NUMBER1=${{ inputs.number1 }}" >> $GITHUB_ENV
+          echo "NUMBER2=${{ inputs.number2 }}" >> $GITHUB_ENV
+
       - name: Calculate sum
         id: calculate
         run: |
-          sum=$((NUMBER1 + NUMBER2))
-          echo "%{sum}"
-          echo "SUM=${sum}" >> $GITHUB_OUTPUT
+          sum=$(($NUMBER1 + $NUMBER2))
+          echo "SUM=$sum"
+          echo "sum=$sum" >> $GITHUB_OUTPUT
