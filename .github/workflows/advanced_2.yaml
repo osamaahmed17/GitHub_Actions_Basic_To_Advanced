@@ -16,26 +16,26 @@ on:
       outputs:
         sum:
           description: 'Sum of the two numbers'
-          value: $
+          value: $ 
           
-  jobs:
-    add-numbers:
-      name: Add two numbers
-      runs-on: ubuntu-latest
-  
-      outputs:
-        sum: $
-      
-      steps:
-        - id: set-up-env
-          name: Set up environment
-          run: |
-            echo "NUMBER1=$" >> $GITHUB_ENV
-            echo "NUMBER2=$" >> $GITHUB_ENV
-            
-        - name: Calculate sum
-          id: calculate
-          run: |
-            sum=$((NUMBER1 + NUMBER2))
-            echo "%{sum}"
-            echo "SUM=${sum}" >> $GITHUB_OUTPUT
+    jobs:
+        add-numbers:
+        name: Add two numbers
+        runs-on: ubuntu-latest
+    
+        outputs:
+            sum: $
+        
+        steps:
+            - id: set-up-env
+            name: Set up environment
+            run: |
+                echo "NUMBER1=$" >> $GITHUB_ENV
+                echo "NUMBER2=$" >> $GITHUB_ENV
+                
+            - name: Calculate sum
+            id: calculate
+            run: |
+                sum=$((NUMBER1 + NUMBER2))
+                echo "%{sum}"
+                echo "SUM=${sum}" >> $GITHUB_OUTPUT
