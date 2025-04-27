@@ -20,3 +20,6 @@ jobs:
 
       - name: Run Composite Action
         uses: ./actions/composite
+
+      - name: Run Python Composite Action
+        uses: ./jenkins-python-actions

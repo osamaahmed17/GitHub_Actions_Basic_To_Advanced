@@ -1,0 +1,21 @@
+name: 'Set up Python'
+description: 'Sets up Python 3.10 and installs dependencies'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Python
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y python3 python3-venv python3-pip
+        python3 --version 
+
+    - name: Set up virtual environment and install requirements
+      shell: bash
+      run: |
+        python3 -m venv venv
+        source venv/bin/activate
+        pip3 install -r requirements.txt 
+        python3 script.py
+
