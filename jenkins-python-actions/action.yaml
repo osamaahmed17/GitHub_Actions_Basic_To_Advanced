@@ -16,6 +16,6 @@ runs:
       run: |
         python3 -m venv venv
         source venv/bin/activate
-        pip install -r requirements.txt 
-        python3 script.py
+        pip install -r ${GITHUB_ACTION_PATH}/requirements.txt 
+        python3 ${GITHUB_ACTION_PATH}/script.py
 
