@@ -2,11 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repo') {
-            steps {
-                git 'https://github.com/your-username/your-repo.git'
-            }
-        }
 
         stage('Install Python and Dependencies') {
             steps {
