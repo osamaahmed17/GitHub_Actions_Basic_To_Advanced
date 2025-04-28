@@ -5,4 +5,4 @@ runs:
   steps:
     - name: Say Hello from Bash
       shell: bash
-      run: bash  script-src/scripts.sh
+      run: bash script-src/scripts.sh
