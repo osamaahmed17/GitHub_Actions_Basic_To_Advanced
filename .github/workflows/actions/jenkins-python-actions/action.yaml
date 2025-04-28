@@ -1,5 +1,12 @@
 name: 'Set up Python'
 description: 'Sets up Python 3.10 and installs dependencies'
+inputs:
+  input1:
+    description: 'First input to the script'
+    required: true
+  input2:
+    description: 'Second input to the script'
+    required: true
 
 runs:
   using: 'composite'
@@ -16,6 +23,6 @@ runs:
       run: |
         python3 -m venv venv
         source venv/bin/activate
-        pip install -r ${GITHUB_ACTION_PATH}/requirements.txt 
-        python3 ${GITHUB_ACTION_PATH}/script.py
+        pip install -r  python-src/requirements.txt 
+        python python-src/script.py --input1 "${{ inputs.input1 }}" --input2 "${{ inputs.input2 }}"
 
