@@ -2,5 +2,5 @@ name: 'My JavaScript Action'
 description: 'Prints Hello from JavaScript'
 runs:
   using: 'node16'
-  main: './../js-src/index.js'
+  main: 'js-src/index.js'
   
