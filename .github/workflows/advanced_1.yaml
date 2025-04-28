@@ -15,8 +15,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Run JavaScript Action
+        uses: ./.github/actions/js-actions
+
+      - name: Run Composite Action
+        uses: ./.github/actions/composite
+
       - name: Run Python Composite Action
-        uses: ./github/actions/jenkins-python-actions
+        uses: ./.github/actions/jenkins-python-actions
         with:
           input1: "Wednesday"
           input2: "Thursday"
