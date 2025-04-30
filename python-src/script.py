@@ -5,7 +5,7 @@ import argparse
 now = datetime.now()
 print("This is the time now", now.strftime("%Y-%m-%d %H:%M:%S"))
 
-parser = argparse.ArgumentParser(description="Process  some inputs.")
+parser = argparse.ArgumentParser(description="Process some inputs.")
 parser.add_argument('--input1', type=str, required=True, help='First input')
 parser.add_argument('--input2', type=str, required=True, help='Second input')
     
