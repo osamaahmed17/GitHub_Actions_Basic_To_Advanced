@@ -9,7 +9,7 @@ pipeline {
                     python3 --version 
                     python3 -m venv venv
                     source venv/bin/activate
-                    pip install -r jenkins-python-actions/requirements.txt 
+                    pip install -r python-src/requirements.txt 
                 '''
             }
         }
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh '''
                     source venv/bin/activate
-                    python3 jenkins-python-actions/script.py
+                    python3 python-src/script.py
                 '''
             }
         }
