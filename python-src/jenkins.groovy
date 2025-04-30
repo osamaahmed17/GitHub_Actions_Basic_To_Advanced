@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh '''
                     source venv/bin/activate
-                    python3 python-src/script.py
+                    python3 python-src/script.py --input1 "Wednesday" --input2 "Thursday"
                 '''
             }
         }
