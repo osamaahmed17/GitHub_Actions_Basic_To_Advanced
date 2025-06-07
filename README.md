@@ -48,4 +48,4 @@ Custom Actions:
 
 1. Clone this repo:  
    ```bash
-   git clone https://github.com/your-username/GitHub_Actions_Basic_To_Advanced.git
+   git clone https://github.com/your-username/GitHub-Actions-Basic-To-Advanced.git
